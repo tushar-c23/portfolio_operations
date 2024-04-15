@@ -6,3 +6,6 @@
 5. Visit http://127.0.0.1:8000/docs to see the API documentation and try out the API
 6. Upload the csv file and click on execute button
 7. A plot will be generated and a png copy of the same will be saved in the current directory where you cloned the repository
+8. The API response will include the following 2 things as a part of the JSON response:
+    - The total portfolio value
+    - The values of the slots of the portfolio
