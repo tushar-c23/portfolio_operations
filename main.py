@@ -25,7 +25,7 @@ def calculate_values(df, prev_values):
         print(row['Values'])
         prev_values = curr_values
 
-@app.post("/uploadfile2/")
+@app.post("/uploadfile/")
 async def upload_file(csv_file: UploadFile = File(...)):
     df = pd.read_csv(csv_file.file)
     drop_rows_with_empty_array(df)
