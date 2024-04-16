@@ -14,17 +14,6 @@ def drop_rows_with_empty_array(df):
 total_portfolio_vals = {}
 total_slot_vals = []
 
-def calculate_values(df, prev_values):
-    for index, row in df.iterrows():
-        percent_changes = [float(x) for x in row['percent_change_values'][1:-1].split(',') if x.strip()]
-        curr_values = []
-        for i in range(len(prev_values)):
-            curr_values.append(prev_values[i] * (1 + percent_changes[i] / 100))
-        
-        row['Values'] = curr_values
-        print(row['Values'])
-        prev_values = curr_values
-
 @app.post("/uploadfile/")
 async def upload_file(csv_file: UploadFile = File(...)):
     df = pd.read_csv(csv_file.file)
